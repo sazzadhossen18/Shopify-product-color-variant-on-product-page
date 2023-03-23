@@ -1,0 +1,84 @@
+{% if option.name == 'Color' %}
+    <input
+      type="radio"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+  <label  class="coloroprtion" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"> 
+   <img src="{{ value | escape | append:'.png' | strip | asset_url }}"/>
+  </label>
+
+{% else %}
+
+
+
+  <input
+      type="radio"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+
+  <label class="sizeoprtion" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+    {{ value }}
+  </label> 
+  
+{% endif %}
+
+
+
+
+
+
+    
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+ 
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+
+
+
+
+Source:https://www.youtube.com/watch?v=JmyQNJTt4gQ&t=1108s
+
+
+
